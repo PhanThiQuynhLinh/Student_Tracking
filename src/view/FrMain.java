@@ -32,6 +32,8 @@ public class FrMain extends javax.swing.JFrame {
         
         Navigator navigator = new Navigator(pnCenter); 
         navigator.setStart();
+        
+        //
     }
 
     /**
