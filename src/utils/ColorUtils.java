@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package common;
+package utils;
+
+import java.awt.Color;
 
 /**
  *
  * @author QuynhLinh
  */
-public enum MenuEnum {
-    HOME_PAGE, STUDENT_MANAGER, COURSE_MANAGER, CLASS_MANAGER, STATISTICAL_MANAGER;
+public class ColorUtils {
+    public static final Color normalMenuPanel = new Color(76, 175, 80);
+    public static final Color hoverMenuPanel = new Color(96, 100, 191);
+    
 }

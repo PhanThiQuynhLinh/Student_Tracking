@@ -5,6 +5,7 @@
  */
 package view;
 
+import common.MenuEnum;
 import controller.Navigator;
 import dto.MenuDto;
 import java.awt.BorderLayout;
@@ -31,7 +32,15 @@ public class FrMain extends javax.swing.JFrame {
         lbLogo.setIcon(new ImageIcon(getClass().getResource("/images/icon_logo_bkcit.png")));
         
         Navigator navigator = new Navigator(pnCenter); 
-        navigator.setStart();
+        navigator.setStart(new PnHomePage());
+        
+        final List<MenuDto> menus = new ArrayList<>();
+        menus.add(new MenuDto(MenuEnum.HOME_PAGE,pnHomePage, lbHomePage));
+        menus.add(new MenuDto(MenuEnum.STUDENT_MANAGER,pnStudentMan, lbStudentMan));
+        menus.add(new MenuDto(MenuEnum.COURSE_MANAGER,pnCourseMan, lbCourseMan));
+        menus.add(new MenuDto(MenuEnum.CLASS_MANAGER,pnClassManager, lbClassManager));
+        menus.add(new MenuDto(MenuEnum.STATISTICAL_MANAGER,pnThongKe, lbThongKe));
+        navigator.setEvent(menus);
         
         //
     }
@@ -56,10 +65,10 @@ public class FrMain extends javax.swing.JFrame {
         lbStudentMan = new javax.swing.JLabel();
         pnCourseMan = new javax.swing.JPanel();
         lbCourseMan = new javax.swing.JLabel();
-        pn = new javax.swing.JPanel();
-        lbCourseMan1 = new javax.swing.JLabel();
-        pnCourseMan2 = new javax.swing.JPanel();
-        lbCourseMan2 = new javax.swing.JLabel();
+        pnClassManager = new javax.swing.JPanel();
+        lbClassManager = new javax.swing.JLabel();
+        pnThongKe = new javax.swing.JPanel();
+        lbThongKe = new javax.swing.JLabel();
         pnLogo = new javax.swing.JPanel();
         lbLogo = new javax.swing.JLabel();
         pnCenter = new javax.swing.JPanel();
@@ -135,31 +144,31 @@ public class FrMain extends javax.swing.JFrame {
 
         pnMenu.add(pnCourseMan);
 
-        pn.setBackground(new java.awt.Color(76, 175, 80));
-        pn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 8, 1, 1));
-        pn.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        pnClassManager.setBackground(new java.awt.Color(76, 175, 80));
+        pnClassManager.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 8, 1, 1));
+        pnClassManager.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        lbCourseMan1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbCourseMan1.setForeground(new java.awt.Color(255, 255, 255));
-        lbCourseMan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbCourseMan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_menu3_white_24dp.png"))); // NOI18N
-        lbCourseMan1.setText("Quản Lý Lớp Học");
-        pn.add(lbCourseMan1);
+        lbClassManager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbClassManager.setForeground(new java.awt.Color(255, 255, 255));
+        lbClassManager.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbClassManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_menu3_white_24dp.png"))); // NOI18N
+        lbClassManager.setText("Quản Lý Lớp Học");
+        pnClassManager.add(lbClassManager);
 
-        pnMenu.add(pn);
+        pnMenu.add(pnClassManager);
 
-        pnCourseMan2.setBackground(new java.awt.Color(76, 175, 80));
-        pnCourseMan2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 8, 1, 1));
-        pnCourseMan2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        pnThongKe.setBackground(new java.awt.Color(76, 175, 80));
+        pnThongKe.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 8, 1, 1));
+        pnThongKe.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        lbCourseMan2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbCourseMan2.setForeground(new java.awt.Color(255, 255, 255));
-        lbCourseMan2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbCourseMan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_menu4_white_24dp.png"))); // NOI18N
-        lbCourseMan2.setText("Thống Kê Dữ Liệu");
-        pnCourseMan2.add(lbCourseMan2);
+        lbThongKe.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbThongKe.setForeground(new java.awt.Color(255, 255, 255));
+        lbThongKe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_menu4_white_24dp.png"))); // NOI18N
+        lbThongKe.setText("Thống Kê Dữ Liệu");
+        pnThongKe.add(lbThongKe);
 
-        pnMenu.add(pnCourseMan2);
+        pnMenu.add(pnThongKe);
 
         pnLogo.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -241,21 +250,21 @@ public class FrMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbApp;
+    private javax.swing.JLabel lbClassManager;
     private javax.swing.JLabel lbCourseMan;
-    private javax.swing.JLabel lbCourseMan1;
-    private javax.swing.JLabel lbCourseMan2;
     private javax.swing.JLabel lbHomePage;
     private javax.swing.JLabel lbLogo;
     private javax.swing.JLabel lbStudentMan;
-    private javax.swing.JPanel pn;
+    private javax.swing.JLabel lbThongKe;
     private javax.swing.JPanel pnApp;
     private javax.swing.JPanel pnCenter;
+    private javax.swing.JPanel pnClassManager;
     private javax.swing.JPanel pnCourseMan;
-    private javax.swing.JPanel pnCourseMan2;
     private javax.swing.JPanel pnHomePage;
     private javax.swing.JPanel pnLeft;
     private javax.swing.JPanel pnLogo;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnStudentMan;
+    private javax.swing.JPanel pnThongKe;
     // End of variables declaration//GEN-END:variables
 }

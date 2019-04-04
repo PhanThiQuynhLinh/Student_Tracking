@@ -6,6 +6,7 @@
 package dto;
 
 import common.MenuEnum;
+import java.util.Objects;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -20,6 +21,14 @@ public class MenuDto {
 
     public MenuDto() {
     }
+
+    public MenuDto(MenuEnum nameMenu, JPanel pnMenu, JLabel lbMenu) {
+        this.pnMenu = pnMenu;
+        this.lbMenu = lbMenu;
+        this.nameMenu = nameMenu;
+    }
+    
+    
     
     public void setPnMenu(JPanel pnMenu) {
         this.pnMenu = pnMenu;
@@ -44,6 +53,24 @@ public class MenuDto {
     public MenuEnum getNameMenu() {
         return nameMenu;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if(this == o){
+            return true;
+        }
+        if(!(o instanceof MenuDto)){
+            return false;
+        }
+        MenuDto dto = (MenuDto)o;
+        return dto.getNameMenu() == this.getNameMenu();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameMenu);
+    }
+    
     
     
     
